@@ -1,6 +1,7 @@
 
 ### Glishy API.
 
+![Glishy API](https://github.com/Glishy/glishy-bend/workflows/Glishy%20API/badge.svg)
 
 #### Api Documentation
 
@@ -31,10 +32,10 @@ $ https://github.com/Glishy/glishy-bend.git
 $ cd glishy-bend
 ```
 
-- Run pipenv
+- Install dependencies
 
 ```
-$ pipenv install
+$ make install
 ```
 
 - After dependencies are installed, run the virtual environment
@@ -76,20 +77,20 @@ $ source .env
 - make migrations
 
 ```
-$ python manage.py makemigrations
-$ python manage.py migrate
+$ make makemigrations
+$ make migrate
 ```
 
 - Run the application
 
 ```
-python manage.py runserver
+make run
 ```
 
 - Testing the application
 
 ```
-$ python manage.py test --verbosity=2
+$ make test
 ```
 
 ---

@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==3.1.6"
+djangorestframework = "==3.12.2"
+django-softdelete = "*"
+drf-yasg2 = "*"
+psycopg2-binary = "*"
+numpy = "*"
+redis = "*"
+celery = "*"
+gevent = "*"
+pyjwt = "*"
+
+[dev-packages]
+flake8 = "*"
+coverage = "*"
+coverage-badge = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.7"
