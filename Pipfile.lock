@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "79e0a395bd497253f29a04d0b8eab1c464a6e02f8c8365f4c7a66c0f4d0f750e"
+            "sha256": "9fc774e1c7b1d8ab6c9256fef149aaf6cd3102f0fbde7fda4a2a3dc1bd2e929f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -111,6 +111,20 @@
             ],
             "index": "pypi",
             "version": "==3.1.6"
+        },
+        "django-discover-runner": {
+            "hashes": [
+                "sha256:0ba91fe722c256bcbfdeb36fac7eac0f27e5bfda55d98c4c1cf9ab62b5b084fe",
+                "sha256:e05b6da06310ecc857b8950007f45b8968dd5f0b8b718a1095cf466c705fd807"
+            ],
+            "version": "==1.0"
+        },
+        "django-role-permissions": {
+            "hashes": [
+                "sha256:ec0e5ab0cc75f58b19ada048e1428e79d3dad393764a945e8a19eea84ba8c43b"
+            ],
+            "index": "pypi",
+            "version": "==3.0.0"
         },
         "django-softdelete": {
             "hashes": [

@@ -38,10 +38,13 @@ INSTALLED_APPS = [
 
     'softdelete',
     'rest_framework',
+    'rolepermissions',
     'drf_yasg2',
 
     'app.api',
+    'app.api.roles',
     'app.api.authentication',
+    'app.api.profile',
 
 ]
 AUTH_USER_MODEL = 'authentication.User'
@@ -57,8 +60,8 @@ MIDDLEWARE = [
 ]
 SAFE_DELETE_INTERPRET_UNDELETED_OBJECTS_AS_CREATED=True
 
-
 ROOT_URLCONF = 'app.urls'
+ROLEPERMISSIONS_MODULE = "app.api.roles.roles"
 
 TEMPLATES = [
     {
@@ -115,7 +118,8 @@ SWAGGER_SETTINGS = {
             'name': 'Authorization',
             'in': 'header'
         }
-    }
+    },
+    "DOC_EXPANSION":"none"
 }
 
 
@@ -164,3 +168,12 @@ CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', '')
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+DEFAULT_USER_IMAGE = os.getenv("DEFAULT_USER_IMAGE", "")
+
+# Token
+TOKEN_EXP_TIME = os.getenv("TOKEN_EXP_TIME", 24)
+
+# Pagination
+PAGE_SIZE = os.getenv("PAGE_SIZE", 10)
+MAX_PAGE_SIZE = os.getenv("MAX_PAGE_SIZE", 200)
