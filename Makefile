@@ -17,7 +17,7 @@ install:
 	pipenv install
 
 test:
-	coverage run --source=app manage.py test --verbosity=2  && coverage report -m
+	coverage run --source=app manage.py test --verbosity=2  && coverage report -m 
 
 run:
 	@ echo 'starting server...'

@@ -78,10 +78,12 @@ jobs:
           DB_PASSWORD: postgres
           DB_HOST: localhost
           DB_NAME: github_actions
-          SECRET_KEY: very-secret-key
+          SECRET_KEY: "${{ secrets.SECRET_KEY }}"
           PYTHONPATH: "."
           DJANGO_DEBUG: "False"
+          CODACY_PROJECT_TOKEN: "${{ secrets.CODACY_PROJECT_TOKEN }}"
         run: |
           pipenv run coverage run --source=app/api --rcfile=.coveragerc  manage.py test --verbosity=2
           pipenv run coverage report -m
-
+          pipenv run coverage xml --rcfile=.coveragerc
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage.xml
