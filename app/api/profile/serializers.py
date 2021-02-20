@@ -24,13 +24,16 @@ class ProfileSerializer(serializers.ModelSerializer):
             UniqueValidator(
                 queryset=Profile.objects.all(),
                 message=error_dict['already_exist'].format("Phone number"),
-            )
-        ], error_messages={
+            )],
+        error_messages={
             'required': error_dict['required'],
-            'min_length': error_dict['min_length'].format("Phone number", "10"),
-            'max_length': error_dict['max_length'].format("Phone number", "15"),
-            'invalid': error_dict['invalid_phone_no']
-        })
+            'min_length': error_dict['min_length'].format(
+                "Phone number",
+                "10"),
+            'max_length': error_dict['max_length'].format(
+                "Phone number",
+                "15"),
+            'invalid': error_dict['invalid_phone_no']})
     first_name = serializers.RegexField(
         regex='^(?!.*\ )[A-Za-z\d\-\_]+$',
         required=False,

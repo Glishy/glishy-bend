@@ -25,6 +25,9 @@ run:
 
 
 lint:
+	@ echo 'Autopep8 linting...'
+	autopep8 --in-place --recursive --aggressive --aggressive .
+
 	@ echo 'linting...'
 	flake8 .
 
